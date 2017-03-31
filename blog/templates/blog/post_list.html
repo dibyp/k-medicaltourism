@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Korea Medical Tourism</title>
-</head>
-<body>
-	<header class="container">
-		<h1>Logo</h1>
-	</header>
-	<nav class="gnb">
-		<li><a href="#">ABOUT</a></li>
-		<li><a href="#">OUR DOCTORS</a></li>
-		<li><a href="#">BLOG</a></li>
-		<li><a href="#">GET STARTED</a></li>
-	</nav>
+{% extends 'blog/base.html' %}
+
+{% block content %}
 	{% for post in posts %}
     <div>
       <p>published: {{ post.published_date }}</p>
-      <h1><a href="#">{{ post.title }}</a></h1>
+      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
       <p>{{ post.text|linebreaksbr }}</p>
     </div>
 	{% endfor %}
-	<footer class="container">
-	</footer>
-</body>
-</html>
+{% endblock content %}

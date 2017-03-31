@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Korea Medical Tourism</title>
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+	<header class="container">
+		<h1>Korea Medical Tourism</h1>
+	</header>
+	<nav class="gnb">
+		<li><a href="#">ABOUT</a></li>
+		<li><a href="#">OUR DOCTORS</a></li>
+		<li><a href="#">BLOG</a></li>
+		<li><a href="#">GET STARTED</a></li>
+	</nav>
+  <div class="content container">
+    <div class="row">
+      <div class="col-md-8">
+      {% block content %}
+      {% endblock %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
