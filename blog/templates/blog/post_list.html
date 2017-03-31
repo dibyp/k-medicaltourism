@@ -14,6 +14,13 @@
 		<li><a href="#">BLOG</a></li>
 		<li><a href="#">GET STARTED</a></li>
 	</nav>
+	{% for post in posts %}
+    <div>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="#">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+	{% endfor %}
 	<footer class="container">
 	</footer>
 </body>
